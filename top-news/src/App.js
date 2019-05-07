@@ -1,8 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+import TopHeadlines from './TopHeadlines/TopHeadlines';
+import LoginForm from './LoginForm/LoginForm';
 import './App.css';
 
-function App() {
+class App extends React.Component {
   constructor(){
     super();
     this.state = {
@@ -22,7 +23,7 @@ function App() {
         <h1>What's today's top headline?</h1>
         {
           this.state.loggedIn ?
-          <topHeadline username={this.state.username} />
+          <TopHeadlines username={this.state.username} />
           :
           <LoginForm handleLogin={this.handleLogin} />
         }
